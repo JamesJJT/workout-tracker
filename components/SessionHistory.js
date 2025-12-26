@@ -24,7 +24,6 @@ export default function SessionHistory({ sessions, onDeleteSession, onClearAll }
         </TouchableOpacity>
       </View>
       {sessions.map((session) => {
-        console.log('Rendering session:', session);
         if (!session || !session.exercises || !Array.isArray(session.exercises)) return null;
         
         return (
