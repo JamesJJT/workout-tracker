@@ -1,0 +1,64 @@
+{
+  "workouts": [
+    {
+      "id": "1",
+      "name": "Bench Press",
+      "category": "Chest",
+      "description": "Classic chest exercise"
+    },
+    {
+      "id": "2",
+      "name": "Squat",
+      "category": "Legs",
+      "description": "Compound leg exercise"
+    },
+    {
+      "id": "3",
+      "name": "Deadlift",
+      "category": "Back",
+      "description": "Full body compound movement"
+    },
+    {
+      "id": "4",
+      "name": "Overhead Press",
+      "category": "Shoulders",
+      "description": "Shoulder and tricep builder"
+    },
+    {
+      "id": "5",
+      "name": "Pull-ups",
+      "category": "Back",
+      "description": "Upper back and biceps"
+    },
+    {
+      "id": "6",
+      "name": "Barbell Row",
+      "category": "Back",
+      "description": "Mid back thickness"
+    },
+    {
+      "id": "7",
+      "name": "Dumbbell Curl",
+      "category": "Arms",
+      "description": "Bicep isolation"
+    },
+    {
+      "id": "8",
+      "name": "Tricep Dips",
+      "category": "Arms",
+      "description": "Tricep mass builder"
+    },
+    {
+      "id": "9",
+      "name": "Leg Press",
+      "category": "Legs",
+      "description": "Quad dominant exercise"
+    },
+    {
+      "id": "10",
+      "name": "Lat Pulldown",
+      "category": "Back",
+      "description": "Upper back width"
+    }
+  ]
+}
