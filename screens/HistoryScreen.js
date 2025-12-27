@@ -6,8 +6,8 @@ import { styles } from '../styles/appStyles';
 export default function HistoryScreen({
   navigation,
   workoutHistory,
-  handleDeleteSession,
-  handleClearAllSessions,
+  onDeleteSession,
+  onClearAllSessions,
 }) {
   return (
     <View style={styles.container}>
@@ -22,8 +22,8 @@ export default function HistoryScreen({
       <ScrollView style={styles.workoutList} showsVerticalScrollIndicator={false}>
         <SessionHistory
           sessions={workoutHistory}
-          onDeleteSession={handleDeleteSession}
-          onClearAll={handleClearAllSessions}
+          onDeleteSession={onDeleteSession}
+          onClearAll={onClearAllSessions}
           onSessionPress={(sessionId) => navigation.navigate('SessionDetail', { sessionId })}
         />
       </ScrollView>
