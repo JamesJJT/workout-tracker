@@ -24,6 +24,7 @@ export default function HistoryScreen({
           sessions={workoutHistory}
           onDeleteSession={handleDeleteSession}
           onClearAll={handleClearAllSessions}
+          onSessionPress={(sessionId) => navigation.navigate('SessionDetail', { sessionId })}
         />
       </ScrollView>
     </View>

@@ -5,6 +5,7 @@ import workoutsData from './workouts-data.json';
 import Router from './navigation/Router';
 import HomeScreen from './screens/HomeScreen';
 import HistoryScreen from './screens/HistoryScreen';
+import SessionDetailScreen from './screens/SessionDetailScreen';
 import WorkoutModal from './components/WorkoutModal';
 import CreateWorkoutModal from './components/CreateWorkoutModal';
 
@@ -216,6 +217,17 @@ export default function App() {
               handleClearAllSessions={handleClearAllSessions}
             />
           ),
+          SessionDetail: ({ navigation }) => {
+            const sessionId = navigation.params?.sessionId;
+            const session = workoutHistory.find(s => s.id === sessionId);
+            return (
+              <SessionDetailScreen
+                session={session}
+                onBack={() => navigation.navigate('History')}
+                onDeleteSession={handleDeleteSession}
+              />
+            );
+          },
         }}
       />
 

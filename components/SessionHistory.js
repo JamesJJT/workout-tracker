@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-export default function SessionHistory({ sessions, onDeleteSession, onClearAll }) {
+export default function SessionHistory({ sessions, onDeleteSession, onClearAll, onSessionPress }) {
   if (sessions.length === 0) return null;
 
   const formatDuration = (minutes) => {
@@ -28,7 +28,12 @@ export default function SessionHistory({ sessions, onDeleteSession, onClearAll }
         if (!session || !session.exercises || !Array.isArray(session.exercises)) return null;
         
         return (
-        <View key={session.id} style={styles.card}>
+        <TouchableOpacity 
+          key={session.id} 
+          style={styles.card}
+          onPress={() => onSessionPress && onSessionPress(session.id)}
+          activeOpacity={onSessionPress ? 0.7 : 1}
+        >
           <View style={styles.header}>
             <View>
               <Text style={styles.sessionTitle}>Workout Session</Text>
@@ -37,7 +42,10 @@ export default function SessionHistory({ sessions, onDeleteSession, onClearAll }
                 <Text style={styles.duration}>{formatDuration(session.duration)}</Text>
               )}
             </View>
-            <TouchableOpacity onPress={() => onDeleteSession(session.id)}>
+            <TouchableOpacity onPress={(e) => {
+              e.stopPropagation();
+              onDeleteSession(session.id);
+            }}>
               <Text style={styles.deleteButton}>✕</Text>
             </TouchableOpacity>
           </View>
@@ -54,7 +62,7 @@ export default function SessionHistory({ sessions, onDeleteSession, onClearAll }
           <Text style={styles.count}>
             {String(session.exercises.length)} exercise{session.exercises.length !== 1 ? 's' : ''}
           </Text>
-        </View>
+        </TouchableOpacity>
         );
       })}
     </>

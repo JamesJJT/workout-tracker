@@ -104,6 +104,7 @@ export default function HomeScreen({
             sessions={workoutHistory.slice(0, 3)}
             onDeleteSession={handleDeleteSession}
             onClearAll={null}
+            onSessionPress={(sessionId) => navigation.navigate('SessionDetail', { sessionId })}
           />
         )}
       </ScrollView>
