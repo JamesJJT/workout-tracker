@@ -419,6 +419,366 @@
       "name": "Sissy Squat",
       "category": "Legs",
       "description": "Quad focused isolation"
+    },
+    {
+      "id": "71",
+      "name": "Incline Dumbbell Press",
+      "category": "Chest",
+      "description": "Upper chest with dumbbells"
+    },
+    {
+      "id": "72",
+      "name": "Decline Dumbbell Press",
+      "category": "Chest",
+      "description": "Lower chest with dumbbells"
+    },
+    {
+      "id": "73",
+      "name": "Dumbbell Bench Press",
+      "category": "Chest",
+      "description": "Alternative to barbell bench press"
+    },
+    {
+      "id": "74",
+      "name": "Chest Press Machine",
+      "category": "Chest",
+      "description": "Machine-based chest pressing"
+    },
+    {
+      "id": "75",
+      "name": "Cable Incline Press",
+      "category": "Chest",
+      "description": "Incline pressing with cables"
+    },
+    {
+      "id": "76",
+      "name": "Single-Arm Cable Fly",
+      "category": "Chest",
+      "description": "Unilateral chest isolation"
+    },
+    {
+      "id": "77",
+      "name": "Box Squat",
+      "category": "Legs",
+      "description": "Controlled squat variation for depth"
+    },
+    {
+      "id": "78",
+      "name": "Front Squat",
+      "category": "Legs",
+      "description": "Quad and core emphasis"
+    },
+    {
+      "id": "79",
+      "name": "Zercher Squat",
+      "category": "Legs",
+      "description": "Front-loaded squat using crook of elbows"
+    },
+    {
+      "id": "80",
+      "name": "Pistol Squat",
+      "category": "Legs",
+      "description": "Advanced single leg bodyweight squat"
+    },
+    {
+      "id": "81",
+      "name": "Reverse Lunge",
+      "category": "Legs",
+      "description": "Lunge variation stepping backward"
+    },
+    {
+      "id": "82",
+      "name": "Split Squat",
+      "category": "Legs",
+      "description": "Stationary lunge for unilateral strength"
+    },
+    {
+      "id": "83",
+      "name": "Nordic Hamstring Curl",
+      "category": "Legs",
+      "description": "Eccentric hamstring strengthening"
+    },
+    {
+      "id": "84",
+      "name": "Reverse Hyperextension",
+      "category": "Back",
+      "description": "Lower back and glute strengthening"
+    },
+    {
+      "id": "85",
+      "name": "Kroc Row",
+      "category": "Back",
+      "description": "Heavy single-arm dumbbell row for lats"
+    },
+    {
+      "id": "86",
+      "name": "Inverted Row",
+      "category": "Back",
+      "description": "Bodyweight horizontal pulling"
+    },
+    {
+      "id": "87",
+      "name": "Meadow Row",
+      "category": "Back",
+      "description": "Unilateral row variation targeting lats and traps"
+    },
+    {
+      "id": "88",
+      "name": "Landmine Row",
+      "category": "Back",
+      "description": "Angled row using landmine setup"
+    },
+    {
+      "id": "89",
+      "name": "Cable Face Pull to External Rotation",
+      "category": "Back",
+      "description": "Upper back and rotator cuff strengthening"
+    },
+    {
+      "id": "90",
+      "name": "Seated Dumbbell Shoulder Press",
+      "category": "Shoulders",
+      "description": "Strict overhead pressing with dumbbells"
+    },
+    {
+      "id": "91",
+      "name": "Landmine Press",
+      "category": "Shoulders",
+      "description": "Single-arm pressing with landmine for stability"
+    },
+    {
+      "id": "92",
+      "name": "Cable Lateral Raise",
+      "category": "Shoulders",
+      "description": "Constant tension lateral delt isolation"
+    },
+    {
+      "id": "93",
+      "name": "Reverse Pec Deck",
+      "category": "Shoulders",
+      "description": "Rear delt isolation machine exercise"
+    },
+    {
+      "id": "94",
+      "name": "Dumbbell Y-Raise",
+      "category": "Shoulders",
+      "description": "Scapular stability and rear delts"
+    },
+    {
+      "id": "95",
+      "name": "Jefferson Curl",
+      "category": "Back",
+      "description": "Slow weighted spinal flexion to build mobility"
+    },
+    {
+      "id": "96",
+      "name": "Cable Pull-Through",
+      "category": "Legs",
+      "description": "Hip hinge movement for glutes and hamstrings"
+    },
+    {
+      "id": "97",
+      "name": "Good Morning (Barbell)",
+      "category": "Legs",
+      "description": "Hip hinge posterior chain exercise"
+    },
+    {
+      "id": "98",
+      "name": "Hip Abduction Machine",
+      "category": "Legs",
+      "description": "Gluteus medius isolation"
+    },
+    {
+      "id": "99",
+      "name": "Hip Adduction Machine",
+      "category": "Legs",
+      "description": "Inner thigh strengthening"
+    },
+    {
+      "id": "100",
+      "name": "Seated Calf Raise",
+      "category": "Legs",
+      "description": "Soleus-focused calf exercise"
+    },
+    {
+      "id": "101",
+      "name": "Donkey Calf Raise",
+      "category": "Legs",
+      "description": "Heavy calf isolation movement"
+    },
+    {
+      "id": "102",
+      "name": "Glute-Ham Raise",
+      "category": "Legs",
+      "description": "Hamstring and glute developer"
+    },
+    {
+      "id": "103",
+      "name": "Sled Push",
+      "category": "Cardio",
+      "description": "High-power conditioning and leg drive"
+    },
+    {
+      "id": "104",
+      "name": "Sled Pull",
+      "category": "Cardio",
+      "description": "Reverse sled conditioning for hamstrings"
+    },
+    {
+      "id": "105",
+      "name": "Prowler Push",
+      "category": "Cardio",
+      "description": "Sprint-like sled pushing for conditioning"
+    },
+    {
+      "id": "106",
+      "name": "Tire Flip",
+      "category": "Other",
+      "description": "Full body strongman movement"
+    },
+    {
+      "id": "107",
+      "name": "Sandbag Carry",
+      "category": "Other",
+      "description": "Loaded carry for conditioning and core"
+    },
+    {
+      "id": "108",
+      "name": "Farmer's Carry (Heavy)",
+      "category": "Other",
+      "description": "Grip strength and core stability carry"
+    },
+    {
+      "id": "109",
+      "name": "Suitcase Carry",
+      "category": "Other",
+      "description": "Unilateral loaded carry for obliques and grip"
+    },
+    {
+      "id": "110",
+      "name": "Turkish Get-Up",
+      "category": "Other",
+      "description": "Full body stability and mobility movement"
+    },
+    {
+      "id": "111",
+      "name": "Kettlebell Swing (Single Arm)",
+      "category": "Cardio",
+      "description": "Unilateral kettlebell hip drive"
+    },
+    {
+      "id": "112",
+      "name": "Kettlebell Clean and Press",
+      "category": "Other",
+      "description": "Explosive full body kettlebell movement"
+    },
+    {
+      "id": "113",
+      "name": "Kettlebell Snatch",
+      "category": "Other",
+      "description": "Single repetition explosive kettlebell move"
+    },
+    {
+      "id": "114",
+      "name": "Medicine Ball Slams",
+      "category": "Cardio",
+      "description": "Explosive conditioning and core power"
+    },
+    {
+      "id": "115",
+      "name": "Medicine Ball Rotational Throw",
+      "category": "Core",
+      "description": "Rotational power and core transfer"
+    },
+    {
+      "id": "116",
+      "name": "Battle Rope Alternating Waves",
+      "category": "Cardio",
+      "description": "Upper body conditioning with ropes"
+    },
+    {
+      "id": "117",
+      "name": "Sprints (10–100m)",
+      "category": "Cardio",
+      "description": "Short distance sprint training"
+    },
+    {
+      "id": "118",
+      "name": "Hill Sprints",
+      "category": "Cardio",
+      "description": "Inclined sprint training for power"
+    },
+    {
+      "id": "119",
+      "name": "Stair Sprints",
+      "category": "Cardio",
+      "description": "Explosive stair running for conditioning"
+    },
+    {
+      "id": "120",
+      "name": "Box Jump (Depth)",
+      "category": "Cardio",
+      "description": "Plyometric box jump focusing on reactive power"
+    },
+    {
+      "id": "121",
+      "name": "Depth Jump",
+      "category": "Cardio",
+      "description": "Advanced plyometric reactive strength exercise"
+    },
+    {
+      "id": "122",
+      "name": "Depth-to-Box Jump",
+      "category": "Cardio",
+      "description": "Plyometric sequence for power and control"
+    },
+    {
+      "id": "123",
+      "name": "Power Clean",
+      "category": "Other",
+      "description": "Olympic lift focusing on power generation"
+    },
+    {
+      "id": "124",
+      "name": "Hang Clean",
+      "category": "Other",
+      "description": "Clean variation from hang position"
+    },
+    {
+      "id": "125",
+      "name": "Power Snatch",
+      "category": "Other",
+      "description": "Explosive snatch variation for power"
+    },
+    {
+      "id": "126",
+      "name": "Overhead Squat",
+      "category": "Other",
+      "description": "Mobility and overhead stability combined with squat"
+    },
+    {
+      "id": "127",
+      "name": "Goblet Reverse Lunge",
+      "category": "Legs",
+      "description": "Lunge variation with goblet load"
+    },
+    {
+      "id": "128",
+      "name": "Cable Single-Leg Romanian Deadlift",
+      "category": "Legs",
+      "description": "Unilateral hinge with cable for balance"
+    },
+    {
+      "id": "129",
+      "name": "Single-Leg Box Squat",
+      "category": "Legs",
+      "description": "Controlled single-leg squat to box for strength"
+    },
+    {
+      "id": "130",
+      "name": "Plyometric Lunge",
+      "category": "Legs",
+      "description": "Explosive alternating lunges for power"
     }
   ]
 }
