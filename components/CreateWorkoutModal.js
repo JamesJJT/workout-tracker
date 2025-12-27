@@ -1,4 +1,3 @@
-import React from 'react';
 import { View, Text, Modal, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
 
 export default function CreateWorkoutModal({
