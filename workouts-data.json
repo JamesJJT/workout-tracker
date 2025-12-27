@@ -59,6 +59,366 @@
       "name": "Lat Pulldown",
       "category": "Back",
       "description": "Upper back width"
+    },
+    {
+      "id": "11",
+      "name": "Incline Bench Press",
+      "category": "Chest",
+      "description": "Upper chest focus"
+    },
+    {
+      "id": "12",
+      "name": "Decline Bench Press",
+      "category": "Chest",
+      "description": "Lower chest focus"
+    },
+    {
+      "id": "13",
+      "name": "Dumbbell Flyes",
+      "category": "Chest",
+      "description": "Chest stretch and contraction"
+    },
+    {
+      "id": "14",
+      "name": "Cable Crossover",
+      "category": "Chest",
+      "description": "Inner chest definition"
+    },
+    {
+      "id": "15",
+      "name": "Push-ups",
+      "category": "Chest",
+      "description": "Bodyweight chest exercise"
+    },
+    {
+      "id": "16",
+      "name": "Romanian Deadlift",
+      "category": "Legs",
+      "description": "Hamstring and glute focus"
+    },
+    {
+      "id": "17",
+      "name": "Lunges",
+      "category": "Legs",
+      "description": "Unilateral leg strength"
+    },
+    {
+      "id": "18",
+      "name": "Leg Curl",
+      "category": "Legs",
+      "description": "Hamstring isolation"
+    },
+    {
+      "id": "19",
+      "name": "Leg Extension",
+      "category": "Legs",
+      "description": "Quad isolation"
+    },
+    {
+      "id": "20",
+      "name": "Calf Raises",
+      "category": "Legs",
+      "description": "Calf development"
+    },
+    {
+      "id": "21",
+      "name": "Bulgarian Split Squat",
+      "category": "Legs",
+      "description": "Single leg quad and glute"
+    },
+    {
+      "id": "22",
+      "name": "Hack Squat",
+      "category": "Legs",
+      "description": "Quad focused machine squat"
+    },
+    {
+      "id": "23",
+      "name": "T-Bar Row",
+      "category": "Back",
+      "description": "Thick back developer"
+    },
+    {
+      "id": "24",
+      "name": "Seated Cable Row",
+      "category": "Back",
+      "description": "Mid back and lats"
+    },
+    {
+      "id": "25",
+      "name": "Face Pulls",
+      "category": "Back",
+      "description": "Rear delts and upper back"
+    },
+    {
+      "id": "26",
+      "name": "Chin-ups",
+      "category": "Back",
+      "description": "Bicep and lat emphasis"
+    },
+    {
+      "id": "27",
+      "name": "Single Arm Dumbbell Row",
+      "category": "Back",
+      "description": "Unilateral back work"
+    },
+    {
+      "id": "28",
+      "name": "Hyperextensions",
+      "category": "Back",
+      "description": "Lower back strengthening"
+    },
+    {
+      "id": "29",
+      "name": "Lateral Raises",
+      "category": "Shoulders",
+      "description": "Side delt isolation"
+    },
+    {
+      "id": "30",
+      "name": "Front Raises",
+      "category": "Shoulders",
+      "description": "Front delt focus"
+    },
+    {
+      "id": "31",
+      "name": "Rear Delt Flyes",
+      "category": "Shoulders",
+      "description": "Rear delt isolation"
+    },
+    {
+      "id": "32",
+      "name": "Arnold Press",
+      "category": "Shoulders",
+      "description": "Complete shoulder rotation"
+    },
+    {
+      "id": "33",
+      "name": "Upright Row",
+      "category": "Shoulders",
+      "description": "Traps and side delts"
+    },
+    {
+      "id": "34",
+      "name": "Shrugs",
+      "category": "Shoulders",
+      "description": "Trap development"
+    },
+    {
+      "id": "35",
+      "name": "Hammer Curl",
+      "category": "Arms",
+      "description": "Brachialis and bicep"
+    },
+    {
+      "id": "36",
+      "name": "Preacher Curl",
+      "category": "Arms",
+      "description": "Isolated bicep peak"
+    },
+    {
+      "id": "37",
+      "name": "Concentration Curl",
+      "category": "Arms",
+      "description": "Bicep peak focus"
+    },
+    {
+      "id": "38",
+      "name": "Cable Curl",
+      "category": "Arms",
+      "description": "Constant tension bicep"
+    },
+    {
+      "id": "39",
+      "name": "Tricep Pushdown",
+      "category": "Arms",
+      "description": "Tricep lateral head"
+    },
+    {
+      "id": "40",
+      "name": "Overhead Tricep Extension",
+      "category": "Arms",
+      "description": "Long head tricep stretch"
+    },
+    {
+      "id": "41",
+      "name": "Skull Crushers",
+      "category": "Arms",
+      "description": "Tricep mass builder"
+    },
+    {
+      "id": "42",
+      "name": "Close Grip Bench Press",
+      "category": "Arms",
+      "description": "Compound tricep exercise"
+    },
+    {
+      "id": "43",
+      "name": "Diamond Push-ups",
+      "category": "Arms",
+      "description": "Bodyweight tricep work"
+    },
+    {
+      "id": "44",
+      "name": "Plank",
+      "category": "Core",
+      "description": "Isometric core stability"
+    },
+    {
+      "id": "45",
+      "name": "Crunches",
+      "category": "Core",
+      "description": "Upper ab focus"
+    },
+    {
+      "id": "46",
+      "name": "Leg Raises",
+      "category": "Core",
+      "description": "Lower ab exercise"
+    },
+    {
+      "id": "47",
+      "name": "Russian Twists",
+      "category": "Core",
+      "description": "Oblique rotation"
+    },
+    {
+      "id": "48",
+      "name": "Ab Wheel Rollout",
+      "category": "Core",
+      "description": "Advanced core exercise"
+    },
+    {
+      "id": "49",
+      "name": "Bicycle Crunches",
+      "category": "Core",
+      "description": "Dynamic ab and oblique work"
+    },
+    {
+      "id": "50",
+      "name": "Mountain Climbers",
+      "category": "Core",
+      "description": "Core and cardio combo"
+    },
+    {
+      "id": "51",
+      "name": "Hanging Knee Raises",
+      "category": "Core",
+      "description": "Lower ab and hip flexor"
+    },
+    {
+      "id": "52",
+      "name": "Side Plank",
+      "category": "Core",
+      "description": "Oblique stability"
+    },
+    {
+      "id": "53",
+      "name": "Treadmill Run",
+      "category": "Cardio",
+      "description": "Steady state cardio"
+    },
+    {
+      "id": "54",
+      "name": "Rowing Machine",
+      "category": "Cardio",
+      "description": "Full body cardio"
+    },
+    {
+      "id": "55",
+      "name": "Stationary Bike",
+      "category": "Cardio",
+      "description": "Low impact cardio"
+    },
+    {
+      "id": "56",
+      "name": "Stair Climber",
+      "category": "Cardio",
+      "description": "Lower body cardio burn"
+    },
+    {
+      "id": "57",
+      "name": "Elliptical",
+      "category": "Cardio",
+      "description": "Joint friendly cardio"
+    },
+    {
+      "id": "58",
+      "name": "Jump Rope",
+      "category": "Cardio",
+      "description": "High intensity cardio"
+    },
+    {
+      "id": "59",
+      "name": "Burpees",
+      "category": "Cardio",
+      "description": "Full body conditioning"
+    },
+    {
+      "id": "60",
+      "name": "Box Jumps",
+      "category": "Cardio",
+      "description": "Explosive power and cardio"
+    },
+    {
+      "id": "61",
+      "name": "Battle Ropes",
+      "category": "Cardio",
+      "description": "Upper body cardio"
+    },
+    {
+      "id": "62",
+      "name": "Kettlebell Swings",
+      "category": "Cardio",
+      "description": "Hip power and conditioning"
+    },
+    {
+      "id": "63",
+      "name": "Farmer's Walk",
+      "category": "Other",
+      "description": "Grip and core strength"
+    },
+    {
+      "id": "64",
+      "name": "Goblet Squat",
+      "category": "Legs",
+      "description": "Front loaded squat variation"
+    },
+    {
+      "id": "65",
+      "name": "Sumo Deadlift",
+      "category": "Legs",
+      "description": "Wide stance deadlift"
+    },
+    {
+      "id": "66",
+      "name": "Good Mornings",
+      "category": "Legs",
+      "description": "Hip hinge pattern"
+    },
+    {
+      "id": "67",
+      "name": "Hip Thrust",
+      "category": "Legs",
+      "description": "Glute focused exercise"
+    },
+    {
+      "id": "68",
+      "name": "Glute Bridge",
+      "category": "Legs",
+      "description": "Bodyweight glute work"
+    },
+    {
+      "id": "69",
+      "name": "Step-ups",
+      "category": "Legs",
+      "description": "Unilateral leg exercise"
+    },
+    {
+      "id": "70",
+      "name": "Sissy Squat",
+      "category": "Legs",
+      "description": "Quad focused isolation"
     }
   ]
 }

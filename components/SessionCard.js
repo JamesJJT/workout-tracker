@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-export default function SessionCard({ session, onEndSession }) {
+export default function SessionCard({ session, onEndSession, onCancelSession }) {
   if (!session) return null;
   
   return (
