@@ -4,6 +4,7 @@ import SessionCard from '../components/SessionCard';
 import WorkoutCard from '../components/WorkoutCard';
 import SessionHistory from '../components/SessionHistory';
 import { styles } from '../styles/appStyles';
+import { FILTER_OPTIONS } from '../constants/categories';
 
 export default function HomeScreen({
   navigation,
@@ -66,10 +67,10 @@ export default function HomeScreen({
 
             <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginBottom: 15 }}>
               <TouchableOpacity
-                style={{ backgroundColor: selectedFilter === 'All' ? '#0f4c75' : '#16213e', paddingHorizontal: 15, paddingVertical: 8, borderRadius: 20, marginRight: 8 }}
-                onPress={() => setSelectedFilter('All')}
+                style={{ backgroundColor: selectedFilter === FILTER_OPTIONS.ALL ? '#0f4c75' : '#16213e', paddingHorizontal: 15, paddingVertical: 8, borderRadius: 20, marginRight: 8 }}
+                onPress={() => setSelectedFilter(FILTER_OPTIONS.ALL)}
               >
-                <Text style={{ color: '#eee', fontWeight: selectedFilter === 'All' ? 'bold' : 'normal' }}>All</Text>
+                <Text style={{ color: '#eee', fontWeight: selectedFilter === FILTER_OPTIONS.ALL ? 'bold' : 'normal' }}>All</Text>
               </TouchableOpacity>
               {categories.map(cat => (
                 <TouchableOpacity

@@ -8,6 +8,7 @@ import HistoryScreen from './screens/HistoryScreen';
 import SessionDetailScreen from './screens/SessionDetailScreen';
 import WorkoutModal from './components/WorkoutModal';
 import CreateWorkoutModal from './components/CreateWorkoutModal';
+import { CATEGORY_LIST, FILTER_OPTIONS } from './constants/categories';
 
 export default function App() {
   const [workoutHistory, setWorkoutHistory] = React.useState([]);
@@ -25,9 +26,7 @@ export default function App() {
   const [showCategoryPicker, setShowCategoryPicker] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(true);
   const [searchQuery, setSearchQuery] = React.useState('');
-  const [selectedFilter, setSelectedFilter] = React.useState('All');
-
-  const categories = ['Chest', 'Back', 'Legs', 'Shoulders', 'Arms', 'Core', 'Cardio', 'Other'];
+  const [selectedFilter, setSelectedFilter] = React.useState(FILTER_OPTIONS.ALL);
 
   // Load data on mount
   React.useEffect(() => {
@@ -133,7 +132,7 @@ export default function App() {
 
   const filteredWorkouts = allWorkouts.filter(workout => {
     const matchesSearch = workout.name.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = selectedFilter === 'All' || workout.category === selectedFilter;
+    const matchesCategory = selectedFilter === FILTER_OPTIONS.ALL || workout.category === selectedFilter;
     return matchesSearch && matchesCategory;
   });
 
@@ -206,7 +205,7 @@ export default function App() {
               setSearchQuery={setSearchQuery}
               selectedFilter={selectedFilter}
               setSelectedFilter={setSelectedFilter}
-              categories={categories}
+              categories={CATEGORY_LIST}
             />
           ),
           History: ({ navigation }) => (
@@ -252,7 +251,7 @@ export default function App() {
         category={newWorkoutCategory}
         description={newWorkoutDescription}
         showPicker={showCategoryPicker}
-        categories={categories}
+        categories={CATEGORY_LIST}
         onClose={() => setCreateWorkoutModalVisible(false)}
         onCreate={handleCreateWorkout}
         onNameChange={setNewWorkoutName}

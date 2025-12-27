@@ -1,4 +1,4 @@
-import { View, Text, Modal, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
+import { View, Text, Modal, TouchableOpacity, TextInput, StyleSheet, ScrollView } from 'react-native';
 
 export default function CreateWorkoutModal({
   visible,
@@ -50,7 +50,7 @@ export default function CreateWorkoutModal({
             </TouchableOpacity>
             
             {showPicker && (
-              <View style={styles.dropdownList}>
+              <ScrollView style={styles.dropdownList} nestedScrollEnabled={true}>
                 {categories.map((cat) => (
                   <TouchableOpacity
                     key={cat}
@@ -60,7 +60,7 @@ export default function CreateWorkoutModal({
                     <Text style={styles.dropdownItemText}>{cat}</Text>
                   </TouchableOpacity>
                 ))}
-              </View>
+              </ScrollView>
             )}
           </View>
 
