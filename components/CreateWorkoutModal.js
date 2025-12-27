@@ -1,4 +1,4 @@
-import { View, Text, Modal, TouchableOpacity, TextInput, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, Modal, TouchableOpacity, TextInput, StyleSheet, ScrollView, TouchableWithoutFeedback, Keyboard } from 'react-native';
 
 export default function CreateWorkoutModal({
   visible,
@@ -21,8 +21,10 @@ export default function CreateWorkoutModal({
       visible={visible}
       onRequestClose={onClose}
     >
-      <View style={styles.overlay}>
-        <View style={styles.content}>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <View style={styles.overlay}>
+          <TouchableWithoutFeedback onPress={() => {}}>
+            <View style={styles.content}>
           <Text style={styles.title}>Create New Workout</Text>
           <Text style={styles.subtitle}>Add a custom exercise</Text>
 
@@ -34,6 +36,8 @@ export default function CreateWorkoutModal({
               onChangeText={onNameChange}
               placeholder="e.g., Bulgarian Split Squat"
               placeholderTextColor="#666"
+              returnKeyType="next"
+              blurOnSubmit={false}
             />
           </View>
 
@@ -72,6 +76,8 @@ export default function CreateWorkoutModal({
               onChangeText={onDescriptionChange}
               placeholder="Notes about this exercise"
               placeholderTextColor="#666"
+              returnKeyType="done"
+              blurOnSubmit={true}
             />
           </View>
 
@@ -91,7 +97,9 @@ export default function CreateWorkoutModal({
             </TouchableOpacity>
           </View>
         </View>
-      </View>
+          </TouchableWithoutFeedback>
+        </View>
+      </TouchableWithoutFeedback>
     </Modal>
   );
 }

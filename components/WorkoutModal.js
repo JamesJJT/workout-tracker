@@ -1,4 +1,4 @@
-import { View, Text, Modal, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
+import { View, Text, Modal, TouchableOpacity, TextInput, StyleSheet, TouchableWithoutFeedback, Keyboard, KeyboardAvoidingView, ScrollView, Platform } from 'react-native';
 
 export default function WorkoutModal({
   visible,
@@ -24,8 +24,17 @@ export default function WorkoutModal({
       visible={visible}
       onRequestClose={onClose}
     >
-      <View style={styles.overlay}>
-        <View style={styles.content}>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <View style={styles.overlay}>
+          <KeyboardAvoidingView
+            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+            style={{ width: '100%' }}
+          >
+            <ScrollView
+              contentContainerStyle={{ alignItems: 'center', paddingVertical: 20 }}
+              keyboardShouldPersistTaps="handled"
+            >
+              <View style={styles.content}>
           <Text style={styles.title}>{workout?.name || 'Workout'}</Text>
           <Text style={styles.subtitle}>{workout?.description || ''}</Text>
 
@@ -48,6 +57,8 @@ export default function WorkoutModal({
                 onChangeText={onMinutesChange}
                 placeholder="0"
                 placeholderTextColor="#666"
+                returnKeyType="done"
+                blurOnSubmit={true}
               />
             </View>
           ) : (
@@ -61,6 +72,8 @@ export default function WorkoutModal({
                   onChangeText={onWeightChange}
                   placeholder="0"
                   placeholderTextColor="#666"
+                  returnKeyType="done"
+                  blurOnSubmit={true}
                 />
               </View>
 
@@ -73,6 +86,8 @@ export default function WorkoutModal({
                   onChangeText={onRepsChange}
                   placeholder="0"
                   placeholderTextColor="#666"
+                  returnKeyType="done"
+                  blurOnSubmit={true}
                 />
               </View>
 
@@ -85,6 +100,8 @@ export default function WorkoutModal({
                   onChangeText={onSetsChange}
                   placeholder="0"
                   placeholderTextColor="#666"
+                  returnKeyType="done"
+                  blurOnSubmit={true}
                 />
               </View>
             </>
@@ -108,12 +125,14 @@ export default function WorkoutModal({
               </Text>
             </TouchableOpacity>
           </View>
+              </View>
+            </ScrollView>
+          </KeyboardAvoidingView>
         </View>
-      </View>
+      </TouchableWithoutFeedback>
     </Modal>
   );
 }
-
 const styles = StyleSheet.create({
   overlay: {
     flex: 1,
