@@ -218,17 +218,20 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginHorizontal: 5,
     alignItems: 'center',
+    justifyContent: 'center',
   },
   summaryLabel: {
     fontSize: 12,
     color: '#aaa',
     marginBottom: 5,
     textTransform: 'uppercase',
+    textAlign: 'center',
   },
   summaryValue: {
     fontSize: 20,
     color: '#0f4c75',
     fontWeight: 'bold',
+    textAlign: 'center',
   },
   sectionTitle: {
     fontSize: 20,
