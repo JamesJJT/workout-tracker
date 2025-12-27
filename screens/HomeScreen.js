@@ -92,20 +92,24 @@ export default function HomeScreen({
           </>
         )}
 
-        <TouchableOpacity 
-          style={styles.navButton} 
-          onPress={() => navigation.navigate('History')}
-        >
-          <Text style={styles.navButtonText}>→ View Session History</Text>
-        </TouchableOpacity>
+        {!currentSession && (
+          <>
+            <TouchableOpacity 
+              style={styles.navButton} 
+              onPress={() => navigation.navigate('History')}
+            >
+              <Text style={styles.navButtonText}>→ View Session History</Text>
+            </TouchableOpacity>
 
-        {workoutHistory.length > 0 && (
-          <SessionHistory
-            sessions={workoutHistory.slice(0, 3)}
-            onDeleteSession={handleDeleteSession}
-            onClearAll={null}
-            onSessionPress={(sessionId) => navigation.navigate('SessionDetail', { sessionId })}
-          />
+            {workoutHistory.length > 0 && (
+              <SessionHistory
+                sessions={workoutHistory.slice(0, 3)}
+                onDeleteSession={handleDeleteSession}
+                onClearAll={null}
+                onSessionPress={(sessionId) => navigation.navigate('SessionDetail', { sessionId })}
+              />
+            )}
+          </>
         )}
       </ScrollView>
     </View>
