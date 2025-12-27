@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
+import { formatDuration } from '../utils/formatDuration';
 
 export default function SessionDetailScreen({ 
   session, 
@@ -25,16 +26,6 @@ export default function SessionDetailScreen({
       </View>
     );
   }
-
-  const formatDuration = (minutes) => {
-    if (minutes === undefined || minutes === null || isNaN(minutes)) return 'Duration not recorded';
-    const mins = parseInt(minutes);
-    if (mins < 1) return '1 min';
-    if (mins < 60) return `${mins} min`;
-    const hours = Math.floor(mins / 60);
-    const remainder = mins % 60;
-    return remainder > 0 ? `${hours}h ${remainder}m` : `${hours}h`;
-  };
 
   const handleDelete = () => {
     onDeleteSession(session.id);
