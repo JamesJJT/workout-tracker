@@ -4,6 +4,8 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 export default function SessionCard({ session, onEndSession, onCancelSession }) {
   if (!session) return null;
   
+  const hasExercises = session.exercises.length > 0;
+  
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -11,8 +13,12 @@ export default function SessionCard({ session, onEndSession, onCancelSession }) 
           <Text style={styles.title}>Current Session</Text>
           <Text style={styles.time}>{session.startTime}</Text>
         </View>
-        <TouchableOpacity style={styles.endButton} onPress={onEndSession}>
-          <Text style={styles.endButtonText}>End Session</Text>
+        <TouchableOpacity 
+          style={[styles.endButton, !hasExercises && styles.endButtonDisabled]} 
+          onPress={hasExercises ? onEndSession : null}
+          disabled={!hasExercises}
+        >
+          <Text style={[styles.endButtonText, !hasExercises && styles.endButtonTextDisabled]}>End Session</Text>
         </TouchableOpacity>
       </View>
       
@@ -61,10 +67,17 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     borderRadius: 8,
   },
+  endButtonDisabled: {
+    backgroundColor: '#333',
+    opacity: 0.5,
+  },
   endButtonText: {
     color: '#fff',
     fontSize: 14,
     fontWeight: 'bold',
+  },
+  endButtonTextDisabled: {
+    color: '#888',
   },
   exercises: {
     marginTop: 10,
