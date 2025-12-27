@@ -27,6 +27,7 @@ export default function HomeScreen({
   const [weight, setWeight] = React.useState('');
   const [reps, setReps] = React.useState('');
   const [sets, setSets] = React.useState('');
+  const [minutes, setMinutes] = React.useState('');
   const [newWorkoutName, setNewWorkoutName] = React.useState('');
   const [newWorkoutCategory, setNewWorkoutCategory] = React.useState('');
   const [newWorkoutDescription, setNewWorkoutDescription] = React.useState('');
@@ -101,6 +102,7 @@ export default function HomeScreen({
     setWeight('');
     setReps('');
     setSets('');
+    setMinutes('');
   };
 
   const getLastWorkoutEntry = () => {
@@ -115,13 +117,21 @@ export default function HomeScreen({
   };
 
   const handleSaveWorkout = () => {
-    if (selectedWorkout && weight && reps && sets && currentSession) {
+    const isCardio = selectedWorkout?.category === 'Cardio';
+    const isValid = isCardio ? (selectedWorkout && minutes && currentSession) : (selectedWorkout && weight && reps && sets && currentSession);
+    
+    if (isValid) {
       const newExercise = {
         id: Date.now().toString(),
         workout: selectedWorkout,
-        weight: parseFloat(weight),
-        reps: parseInt(reps),
-        sets: parseInt(sets),
+        ...(isCardio 
+          ? { minutes: parseInt(minutes) }
+          : { 
+              weight: parseFloat(weight),
+              reps: parseInt(reps),
+              sets: parseInt(sets)
+            }
+        ),
         time: new Date().toLocaleTimeString()
       };
       
@@ -234,6 +244,7 @@ export default function HomeScreen({
       weight={weight}
       reps={reps}
       sets={sets}
+      minutes={minutes}
       lastEntry={getLastWorkoutEntry()}
       hasSession={!!currentSession}
       onClose={() => setModalVisible(false)}
@@ -241,6 +252,7 @@ export default function HomeScreen({
       onWeightChange={setWeight}
       onRepsChange={setReps}
       onSetsChange={setSets}
+      onMinutesChange={setMinutes}
     />
 
     <CreateWorkoutModal

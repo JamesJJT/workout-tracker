@@ -63,13 +63,13 @@ export default function SessionDetailScreen({
           <View style={styles.summaryItem}>
             <Text style={styles.summaryLabel}>Total Sets</Text>
             <Text style={styles.summaryValue}>
-              {session.exercises.reduce((sum, ex) => sum + (parseInt(ex.sets) || 0), 0)}
+              {session.exercises.filter(ex => ex.workout?.category !== 'Cardio').reduce((sum, ex) => sum + (parseInt(ex.sets) || 0), 0)}
             </Text>
           </View>
           <View style={styles.summaryItem}>
             <Text style={styles.summaryLabel}>Total Volume</Text>
             <Text style={styles.summaryValue}>
-              {session.exercises.reduce((sum, ex) => {
+              {session.exercises.filter(ex => ex.workout?.category !== 'Cardio').reduce((sum, ex) => {
                 const weight = parseFloat(ex.weight) || 0;
                 const reps = parseInt(ex.reps) || 0;
                 const sets = parseInt(ex.sets) || 0;
@@ -82,6 +82,7 @@ export default function SessionDetailScreen({
         <Text style={styles.sectionTitle}>Exercises</Text>
         {session.exercises.map((exercise, index) => {
           const isExpanded = expandedExercises[exercise.id];
+          const isCardio = exercise.workout?.category === 'Cardio';
           const sets = parseInt(exercise.sets) || 0;
           const setRows = Array.from({ length: sets }, (_, i) => i + 1);
 
@@ -94,34 +95,43 @@ export default function SessionDetailScreen({
                 <View style={styles.exerciseHeader}>
                   <Text style={styles.exerciseNumber}>#{index + 1}</Text>
                   <Text style={styles.exerciseName}>{exercise.workout?.name || 'Exercise'}</Text>
-                  <Text style={styles.expandIcon}>{isExpanded ? '▼' : '▶'}</Text>
+                  {!isCardio && <Text style={styles.expandIcon}>{isExpanded ? '▼' : '▶'}</Text>}
                 </View>
                 {exercise.workout?.category && (
                   <Text style={styles.exerciseCategory}>{exercise.workout.category}</Text>
                 )}
-                <View style={styles.exerciseStats}>
-                  <View style={styles.statBox}>
-                    <Text style={styles.statLabel}>Weight</Text>
-                    <Text style={styles.statValue}>{exercise.weight} kg</Text>
+                {isCardio ? (
+                  <View style={styles.cardioStats}>
+                    <View style={styles.statBox}>
+                      <Text style={styles.statLabel}>Duration</Text>
+                      <Text style={styles.statValue}>{exercise.minutes} min</Text>
+                    </View>
                   </View>
-                  <View style={styles.statBox}>
-                    <Text style={styles.statLabel}>Reps</Text>
-                    <Text style={styles.statValue}>{exercise.reps}</Text>
+                ) : (
+                  <View style={styles.exerciseStats}>
+                    <View style={styles.statBox}>
+                      <Text style={styles.statLabel}>Weight</Text>
+                      <Text style={styles.statValue}>{exercise.weight} kg</Text>
+                    </View>
+                    <View style={styles.statBox}>
+                      <Text style={styles.statLabel}>Reps</Text>
+                      <Text style={styles.statValue}>{exercise.reps}</Text>
+                    </View>
+                    <View style={styles.statBox}>
+                      <Text style={styles.statLabel}>Sets</Text>
+                      <Text style={styles.statValue}>{exercise.sets}</Text>
+                    </View>
+                    <View style={styles.statBox}>
+                      <Text style={styles.statLabel}>Volume</Text>
+                      <Text style={styles.statValue}>
+                        {(parseFloat(exercise.weight) * parseInt(exercise.reps) * parseInt(exercise.sets)).toFixed(0)} kg
+                      </Text>
+                    </View>
                   </View>
-                  <View style={styles.statBox}>
-                    <Text style={styles.statLabel}>Sets</Text>
-                    <Text style={styles.statValue}>{exercise.sets}</Text>
-                  </View>
-                  <View style={styles.statBox}>
-                    <Text style={styles.statLabel}>Volume</Text>
-                    <Text style={styles.statValue}>
-                      {(parseFloat(exercise.weight) * parseInt(exercise.reps) * parseInt(exercise.sets)).toFixed(0)} kg
-                    </Text>
-                  </View>
-                </View>
+                )}
               </TouchableOpacity>
 
-              {isExpanded && (
+              {isExpanded && !isCardio && (
                 <View style={styles.setsBreakdown}>
                   <View style={styles.setsHeader}>
                     <Text style={styles.setsHeaderText}>Set Breakdown</Text>
@@ -275,6 +285,10 @@ const styles = StyleSheet.create({
   exerciseStats: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+  cardioStats: {
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
   statBox: {
     flex: 1,

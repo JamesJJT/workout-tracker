@@ -44,9 +44,10 @@ export default function SessionHistory({ sessions, onDeleteSession, onClearAll, 
           <View style={styles.exercisesList}>
             {session.exercises.map((exercise) => {
               if (!exercise) return null;
+              const isCardio = exercise.workout?.category === 'Cardio';
               return (
               <Text key={exercise.id} style={styles.exercise}>
-                • {String(exercise.workout?.name || 'Exercise')}: {String(exercise.sets || 0)} × {String(exercise.reps || 0)} @ {String(exercise.weight || 0)} kg
+                • {String(exercise.workout?.name || 'Exercise')}: {isCardio ? `${String(exercise.minutes || 0)} minutes` : `${String(exercise.sets || 0)} × ${String(exercise.reps || 0)} @ ${String(exercise.weight || 0)} kg`}
               </Text>
               );
             })}

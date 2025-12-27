@@ -23,14 +23,17 @@ export default function SessionCard({ session, onEndSession, onCancelSession }) 
       
       {session.exercises.length > 0 && (
         <View style={styles.exercises}>
-          {session.exercises.map((exercise) => (
+          {session.exercises.map((exercise) => {
+            const isCardio = exercise.workout?.category === 'Cardio';
+            return (
             <View key={exercise.id} style={styles.exerciseItem}>
               <Text style={styles.exerciseName}>{exercise.workout.name}</Text>
               <Text style={styles.exerciseDetails}>
-                {exercise.sets} × {exercise.reps} @ {exercise.weight} kg
+                {isCardio ? `${exercise.minutes} minutes` : `${exercise.sets} × ${exercise.reps} @ ${exercise.weight} kg`}
               </Text>
             </View>
-          ))}
+            );
+          })}
         </View>
       )}
     </View>

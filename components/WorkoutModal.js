@@ -6,6 +6,7 @@ export default function WorkoutModal({
   weight,
   reps,
   sets,
+  minutes,
   lastEntry,
   hasSession,
   onClose,
@@ -13,7 +14,9 @@ export default function WorkoutModal({
   onWeightChange,
   onRepsChange,
   onSetsChange,
+  onMinutesChange,
 }) {
+  const isCardio = workout?.category === 'Cardio';
   return (
     <Modal
       animationType="slide"
@@ -30,46 +33,62 @@ export default function WorkoutModal({
             <View style={styles.lastWorkout}>
               <Text style={styles.lastWorkoutTitle}>Last Recorded:</Text>
               <Text style={styles.lastWorkoutText}>
-                {lastEntry.sets} sets × {lastEntry.reps} reps @ {lastEntry.weight} kg
+                {isCardio ? `${lastEntry.minutes} minutes` : `${lastEntry.sets} sets × ${lastEntry.reps} reps @ ${lastEntry.weight} kg`}
               </Text>
             </View>
           )}
 
-          <View style={styles.inputContainer}>
-            <Text style={styles.inputLabel}>Weight (kg)</Text>
-            <TextInput
-              style={styles.input}
-              keyboardType="numeric"
-              value={weight}
-              onChangeText={onWeightChange}
-              placeholder="0"
-              placeholderTextColor="#666"
-            />
-          </View>
+          {isCardio ? (
+            <View style={styles.inputContainer}>
+              <Text style={styles.inputLabel}>Minutes</Text>
+              <TextInput
+                style={styles.input}
+                keyboardType="numeric"
+                value={minutes}
+                onChangeText={onMinutesChange}
+                placeholder="0"
+                placeholderTextColor="#666"
+              />
+            </View>
+          ) : (
+            <>
+              <View style={styles.inputContainer}>
+                <Text style={styles.inputLabel}>Weight (kg)</Text>
+                <TextInput
+                  style={styles.input}
+                  keyboardType="numeric"
+                  value={weight}
+                  onChangeText={onWeightChange}
+                  placeholder="0"
+                  placeholderTextColor="#666"
+                />
+              </View>
 
-          <View style={styles.inputContainer}>
-            <Text style={styles.inputLabel}>Reps</Text>
-            <TextInput
-              style={styles.input}
-              keyboardType="numeric"
-              value={reps}
-              onChangeText={onRepsChange}
-              placeholder="0"
-              placeholderTextColor="#666"
-            />
-          </View>
+              <View style={styles.inputContainer}>
+                <Text style={styles.inputLabel}>Reps</Text>
+                <TextInput
+                  style={styles.input}
+                  keyboardType="numeric"
+                  value={reps}
+                  onChangeText={onRepsChange}
+                  placeholder="0"
+                  placeholderTextColor="#666"
+                />
+              </View>
 
-          <View style={styles.inputContainer}>
-            <Text style={styles.inputLabel}>Sets</Text>
-            <TextInput
-              style={styles.input}
-              keyboardType="numeric"
-              value={sets}
-              onChangeText={onSetsChange}
-              placeholder="0"
-              placeholderTextColor="#666"
-            />
-          </View>
+              <View style={styles.inputContainer}>
+                <Text style={styles.inputLabel}>Sets</Text>
+                <TextInput
+                  style={styles.input}
+                  keyboardType="numeric"
+                  value={sets}
+                  onChangeText={onSetsChange}
+                  placeholder="0"
+                  placeholderTextColor="#666"
+                />
+              </View>
+            </>
+          )}
 
           <View style={styles.buttons}>
             <TouchableOpacity
