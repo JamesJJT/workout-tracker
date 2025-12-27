@@ -19,9 +19,11 @@ export default function SessionHistory({ sessions, onDeleteSession, onClearAll }
         <Text style={styles.title}>
           Previous Sessions ({sessions.length})
         </Text>
-        <TouchableOpacity style={styles.clearButton} onPress={onClearAll}>
-          <Text style={styles.clearButtonText}>Clear All</Text>
-        </TouchableOpacity>
+        {onClearAll ? (
+          <TouchableOpacity style={styles.clearButton} onPress={onClearAll}>
+            <Text style={styles.clearButtonText}>Clear All</Text>
+          </TouchableOpacity>
+        ) : null}
       </View>
       {sessions.map((session) => {
         if (!session || !session.exercises || !Array.isArray(session.exercises)) return null;
