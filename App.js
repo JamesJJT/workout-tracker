@@ -5,6 +5,7 @@ import Router from './navigation/Router';
 import HomeScreen from './screens/HomeScreen';
 import HistoryScreen from './screens/HistoryScreen';
 import SessionDetailScreen from './screens/SessionDetailScreen';
+import StatsScreen from './screens/StatsScreen';
 
 export default function App() {
   const [workoutHistory, setWorkoutHistory] = React.useState([]);
@@ -88,6 +89,12 @@ export default function App() {
               workoutHistory={workoutHistory}
               onDeleteSession={handleDeleteSession}
               onClearAllSessions={handleClearAllSessions}
+            />
+          ),
+          Stats: ({ navigation }) => (
+            <StatsScreen
+              navigation={navigation}
+              workoutHistory={workoutHistory}
             />
           ),
           SessionDetail: ({ navigation }) => {

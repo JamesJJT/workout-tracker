@@ -225,6 +225,13 @@ export default function HomeScreen({
               <Text style={styles.navButtonText}>→ View Session History</Text>
             </TouchableOpacity>
 
+            <TouchableOpacity 
+              style={styles.navButton} 
+              onPress={() => navigation.navigate('Stats')}
+            >
+              <Text style={styles.navButtonText}>→ View Statistics</Text>
+            </TouchableOpacity>
+
             {workoutHistory.length > 0 && (
               <SessionHistory
                 sessions={workoutHistory.slice(0, 3)}
